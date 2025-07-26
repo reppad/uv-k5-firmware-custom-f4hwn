@@ -24,7 +24,24 @@ custom() {
     echo "🔧 Custom compilation..."
     docker run --rm -v "${PWD}:/app" --user $(id -u):$(id -g) "$IMAGE_NAME" /bin/bash -c "\
         cd /app && git submodule update --init --recursive && make -s clean && make -s \
-        EDITION_STRING=Custom \
+        ENABLE_SPECTRUM=1 \
+        ENABLE_FMRADIO=1 \
+        ENABLE_VOX=0 \
+        ENABLE_AIRCOPY=0 \
+        ENABLE_FEAT_F4HWN_GAME=0 \
+        ENABLE_FEAT_F4HWN_SPECTRUM=1 \
+        ENABLE_FEAT_F4HWN_PMR=1 \
+        ENABLE_FEAT_F4HWN_GMRS_FRS_MURS=0 \
+        ENABLE_NOAA=0 \
+        ENABLE_AUDIO_BAR=0 \
+        ENABLE_FEAT_F4HWN_RESUME_STATE=0 \
+        ENABLE_FEAT_F4HWN_CHARGING_C=0 \
+        ENABLE_FEAT_F4HWN_INV=1 \
+        ENABLE_FEAT_F4HWN_CTR=0 \
+        ENABLE_FEAT_F4HWN_NARROWER=0 \
+        ENABLE_FEAT_F4HWN_RESCUE_OPS=0 \
+        ENABLE_FEAT_F4HWN_SLEEP=0 \
+        EDITION_STRING=Reppad \
         TARGET=f4hwn.custom \
         && mv f4hwn.custom* compiled-firmware/ \
         && make -s clean"
