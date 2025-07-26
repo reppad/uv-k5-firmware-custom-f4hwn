@@ -91,9 +91,9 @@ basic() {
         ENABLE_VOX=0 \
         ENABLE_AIRCOPY=0 \
         ENABLE_FEAT_F4HWN_GAME=0 \
-        ENABLE_FEAT_F4HWN_SPECTRUM=0 \
+        ENABLE_FEAT_F4HWN_SPECTRUM=1 \
         ENABLE_FEAT_F4HWN_PMR=1 \
-        ENABLE_FEAT_F4HWN_GMRS_FRS_MURS=1 \
+        ENABLE_FEAT_F4HWN_GMRS_FRS_MURS=0 \
         ENABLE_NOAA=0 \
         ENABLE_AUDIO_BAR=0 \
         ENABLE_FEAT_F4HWN_RESUME_STATE=0 \
@@ -102,6 +102,7 @@ basic() {
         ENABLE_FEAT_F4HWN_CTR=0 \
         ENABLE_FEAT_F4HWN_NARROWER=0 \
         ENABLE_FEAT_F4HWN_RESCUE_OPS=0 \
+        ENABLE_FEAT_F4HWN_SLEEP=0 \
         EDITION_STRING=Basic \
         TARGET=f4hwn.basic \
         && mv f4hwn.basic* compiled-firmware/ \
